@@ -1,0 +1,950 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Proposition Stratégique — Kevin Juillet × Sales Performances Blueprint</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400;1,600&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+:root {
+  --noir: #0A0A0A;
+  --blanc: #F8F6F1;
+  --beige: #C9B99A;
+  --beige-pale: #EDE8E0;
+  --or: #B8963E;
+  --rouge: #8B2020;
+  --vert: #1A5C3A;
+  --gris: #6B6B6B;
+  --gris-light: #E8E4DC;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  background: var(--blanc);
+  color: var(--noir);
+  font-family: 'DM Sans', sans-serif;
+  font-weight: 300;
+  overflow-x: hidden;
+}
+
+/* COVER */
+.cover {
+  min-height: 100vh;
+  background: var(--noir);
+  display: grid;
+  grid-template-rows: 1fr auto;
+  padding: 64px;
+  position: relative;
+  overflow: hidden;
+}
+
+.cover::before {
+  content: '';
+  position: absolute;
+  top: -40%;
+  right: -20%;
+  width: 700px;
+  height: 700px;
+  background: radial-gradient(ellipse, rgba(184,150,62,.08) 0%, transparent 65%);
+  pointer-events: none;
+}
+
+.cover-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+.cover-brand {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 13px;
+  font-weight: 400;
+  letter-spacing: .25em;
+  text-transform: uppercase;
+  color: rgba(201,185,154,.5);
+}
+
+.cover-date {
+  font-size: 11px;
+  font-weight: 400;
+  letter-spacing: .15em;
+  text-transform: uppercase;
+  color: rgba(201,185,154,.3);
+}
+
+.cover-main {
+  padding: 80px 0 40px;
+}
+
+.cover-eyebrow {
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: .3em;
+  text-transform: uppercase;
+  color: var(--beige);
+  margin-bottom: 32px;
+  opacity: .6;
+}
+
+.cover-title {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(52px, 8vw, 96px);
+  font-weight: 300;
+  line-height: .95;
+  color: var(--blanc);
+  margin-bottom: 48px;
+  max-width: 800px;
+}
+
+.cover-title em {
+  font-style: italic;
+  color: var(--beige);
+}
+
+.cover-divider {
+  width: 60px;
+  height: 1px;
+  background: rgba(201,185,154,.3);
+  margin-bottom: 40px;
+}
+
+.cover-sub {
+  font-size: 16px;
+  color: rgba(201,185,154,.45);
+  max-width: 520px;
+  line-height: 1.8;
+  font-weight: 300;
+}
+
+.cover-bottom {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  padding-top: 40px;
+  border-top: 1px solid rgba(201,185,154,.1);
+}
+
+.cover-for {
+  font-size: 11px;
+  letter-spacing: .2em;
+  text-transform: uppercase;
+  color: rgba(201,185,154,.3);
+  margin-bottom: 8px;
+}
+
+.cover-name {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 28px;
+  font-weight: 400;
+  color: var(--blanc);
+  letter-spacing: .05em;
+}
+
+.cover-confidential {
+  font-size: 10px;
+  letter-spacing: .2em;
+  text-transform: uppercase;
+  color: rgba(201,185,154,.2);
+  text-align: right;
+}
+
+/* SECTION WRAPPER */
+.section {
+  max-width: 860px;
+  margin: 0 auto;
+  padding: 100px 48px;
+}
+
+.section-eyebrow {
+  font-size: 10px;
+  font-weight: 500;
+  letter-spacing: .3em;
+  text-transform: uppercase;
+  color: var(--beige);
+  margin-bottom: 20px;
+  opacity: .7;
+}
+
+.section-title {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(32px, 5vw, 52px);
+  font-weight: 300;
+  line-height: 1.1;
+  color: var(--noir);
+  margin-bottom: 32px;
+}
+
+.section-title em {
+  font-style: italic;
+  color: var(--gris);
+}
+
+.section-body {
+  font-size: 16px;
+  line-height: 1.85;
+  color: #3A3A3A;
+  max-width: 640px;
+}
+
+/* DIAGNOSTIC */
+.diagnostic-bg {
+  background: var(--noir);
+  padding: 100px 0;
+}
+
+.diagnostic-inner {
+  max-width: 860px;
+  margin: 0 auto;
+  padding: 0 48px;
+}
+
+.diagnostic-eyebrow {
+  font-size: 10px;
+  font-weight: 500;
+  letter-spacing: .3em;
+  text-transform: uppercase;
+  color: rgba(201,185,154,.5);
+  margin-bottom: 20px;
+}
+
+.diagnostic-title {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(32px, 5vw, 52px);
+  font-weight: 300;
+  color: var(--blanc);
+  line-height: 1.1;
+  margin-bottom: 64px;
+}
+
+.diagnostic-title em {
+  font-style: italic;
+  color: var(--beige);
+}
+
+.diag-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2px;
+  margin-bottom: 64px;
+}
+
+.diag-card {
+  background: rgba(255,255,255,.03);
+  border: 1px solid rgba(255,255,255,.06);
+  padding: 36px 32px;
+  position: relative;
+}
+
+.diag-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 2px;
+}
+
+.diag-card.rouge::before { background: var(--rouge); }
+.diag-card.or::before { background: var(--or); }
+
+.diag-num {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 48px;
+  font-weight: 300;
+  line-height: 1;
+  margin-bottom: 8px;
+}
+
+.diag-card.rouge .diag-num { color: #C05050; }
+.diag-card.or .diag-num { color: var(--or); }
+
+.diag-label {
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: .15em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,.3);
+  margin-bottom: 16px;
+}
+
+.diag-desc {
+  font-size: 14px;
+  color: rgba(255,255,255,.45);
+  line-height: 1.65;
+  font-weight: 300;
+}
+
+/* WHAT WE DO */
+.what-row {
+  display: grid;
+  grid-template-columns: 1fr 3px 1fr;
+  gap: 0;
+  margin-bottom: 2px;
+}
+
+.what-col {
+  padding: 48px 40px;
+  background: var(--blanc);
+  border: 1px solid var(--gris-light);
+}
+
+.what-sep {
+  background: var(--gris-light);
+}
+
+.what-tag {
+  display: inline-block;
+  font-size: 9px;
+  font-weight: 500;
+  letter-spacing: .25em;
+  text-transform: uppercase;
+  padding: 5px 12px;
+  margin-bottom: 20px;
+}
+
+.what-tag.dfy {
+  background: rgba(26,92,58,.08);
+  color: var(--vert);
+}
+
+.what-tag.dwy {
+  background: rgba(184,150,62,.1);
+  color: var(--or);
+}
+
+.what-title {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 22px;
+  font-weight: 400;
+  color: var(--noir);
+  margin-bottom: 20px;
+  line-height: 1.2;
+}
+
+.what-items {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.what-item {
+  font-size: 14px;
+  color: #3A3A3A;
+  line-height: 1.6;
+  padding-left: 20px;
+  position: relative;
+}
+
+.what-item::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 10px;
+  width: 6px;
+  height: 1px;
+  background: var(--beige);
+}
+
+/* OFFRES */
+.offres-bg {
+  background: var(--beige-pale);
+  padding: 100px 0;
+}
+
+.offres-inner {
+  max-width: 860px;
+  margin: 0 auto;
+  padding: 0 48px;
+}
+
+.offre-card {
+  background: var(--blanc);
+  border: 1px solid var(--gris-light);
+  margin-bottom: 2px;
+  position: relative;
+  overflow: hidden;
+}
+
+.offre-card.featured {
+  background: var(--noir);
+}
+
+.offre-top {
+  padding: 48px 48px 36px;
+  border-bottom: 1px solid var(--gris-light);
+}
+
+.offre-card.featured .offre-top {
+  border-bottom-color: rgba(255,255,255,.08);
+}
+
+.offre-badge {
+  display: inline-block;
+  font-size: 9px;
+  font-weight: 500;
+  letter-spacing: .25em;
+  text-transform: uppercase;
+  padding: 5px 12px;
+  margin-bottom: 24px;
+  background: rgba(184,150,62,.1);
+  color: var(--or);
+}
+
+.offre-card.featured .offre-badge {
+  background: rgba(201,185,154,.1);
+  color: var(--beige);
+}
+
+.offre-name {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(28px, 4vw, 42px);
+  font-weight: 300;
+  line-height: 1.1;
+  color: var(--noir);
+  margin-bottom: 12px;
+}
+
+.offre-card.featured .offre-name {
+  color: var(--blanc);
+}
+
+.offre-name em {
+  font-style: italic;
+  color: var(--gris);
+}
+
+.offre-card.featured .offre-name em {
+  color: var(--beige);
+}
+
+.offre-price {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(44px, 7vw, 72px);
+  font-weight: 300;
+  color: var(--noir);
+  line-height: 1;
+  margin-bottom: 8px;
+}
+
+.offre-card.featured .offre-price {
+  color: var(--blanc);
+}
+
+.offre-price-detail {
+  font-size: 13px;
+  color: var(--gris);
+  font-weight: 300;
+  letter-spacing: .05em;
+}
+
+.offre-card.featured .offre-price-detail {
+  color: rgba(201,185,154,.45);
+}
+
+.offre-body {
+  padding: 40px 48px;
+}
+
+.offre-section-title {
+  font-size: 10px;
+  font-weight: 500;
+  letter-spacing: .25em;
+  text-transform: uppercase;
+  color: var(--beige);
+  margin-bottom: 20px;
+  opacity: .8;
+}
+
+.offre-card.featured .offre-section-title {
+  color: rgba(201,185,154,.5);
+}
+
+.offre-items {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-bottom: 36px;
+}
+
+.offre-item {
+  font-size: 15px;
+  color: #3A3A3A;
+  line-height: 1.6;
+  padding-left: 24px;
+  position: relative;
+}
+
+.offre-card.featured .offre-item {
+  color: rgba(255,255,255,.6);
+}
+
+.offre-item::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 11px;
+  width: 8px;
+  height: 1px;
+  background: var(--beige);
+}
+
+.offre-garantie {
+  background: rgba(26,92,58,.06);
+  border: 1px solid rgba(26,92,58,.12);
+  padding: 20px 24px;
+  margin-top: 8px;
+}
+
+.offre-card.featured .offre-garantie {
+  background: rgba(201,185,154,.05);
+  border-color: rgba(201,185,154,.1);
+}
+
+.offre-garantie-label {
+  font-size: 10px;
+  font-weight: 500;
+  letter-spacing: .2em;
+  text-transform: uppercase;
+  color: var(--vert);
+  margin-bottom: 8px;
+}
+
+.offre-card.featured .offre-garantie-label {
+  color: var(--beige);
+  opacity: .7;
+}
+
+.offre-garantie-text {
+  font-size: 13px;
+  color: #3A3A3A;
+  line-height: 1.6;
+}
+
+.offre-card.featured .offre-garantie-text {
+  color: rgba(255,255,255,.45);
+}
+
+/* TIMELINE */
+.timeline {
+  padding: 100px 0;
+  background: var(--blanc);
+}
+
+.timeline-inner {
+  max-width: 860px;
+  margin: 0 auto;
+  padding: 0 48px;
+}
+
+.tl-items {
+  margin-top: 64px;
+  position: relative;
+}
+
+.tl-items::before {
+  content: '';
+  position: absolute;
+  left: 23px;
+  top: 0;
+  bottom: 0;
+  width: 1px;
+  background: var(--gris-light);
+}
+
+.tl-item {
+  display: grid;
+  grid-template-columns: 48px 1fr;
+  gap: 32px;
+  margin-bottom: 48px;
+  position: relative;
+}
+
+.tl-dot {
+  width: 48px;
+  height: 48px;
+  border: 1px solid var(--gris-light);
+  background: var(--blanc);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 16px;
+  font-weight: 400;
+  color: var(--gris);
+  position: relative;
+  z-index: 2;
+  flex-shrink: 0;
+}
+
+.tl-item.active .tl-dot {
+  background: var(--noir);
+  border-color: var(--noir);
+  color: var(--beige);
+}
+
+.tl-content {
+  padding-top: 12px;
+}
+
+.tl-when {
+  font-size: 10px;
+  font-weight: 500;
+  letter-spacing: .2em;
+  text-transform: uppercase;
+  color: var(--beige);
+  opacity: .7;
+  margin-bottom: 8px;
+}
+
+.tl-title {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 22px;
+  font-weight: 400;
+  color: var(--noir);
+  margin-bottom: 10px;
+}
+
+.tl-desc {
+  font-size: 14px;
+  color: var(--gris);
+  line-height: 1.7;
+  font-weight: 300;
+  max-width: 520px;
+}
+
+/* CTA FINAL */
+.cta-final {
+  background: var(--noir);
+  padding: 120px 0;
+  text-align: center;
+}
+
+.cta-inner {
+  max-width: 640px;
+  margin: 0 auto;
+  padding: 0 48px;
+}
+
+.cta-eyebrow {
+  font-size: 10px;
+  font-weight: 500;
+  letter-spacing: .3em;
+  text-transform: uppercase;
+  color: rgba(201,185,154,.4);
+  margin-bottom: 24px;
+}
+
+.cta-title {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(36px, 6vw, 64px);
+  font-weight: 300;
+  color: var(--blanc);
+  line-height: 1.05;
+  margin-bottom: 24px;
+}
+
+.cta-title em {
+  font-style: italic;
+  color: var(--beige);
+}
+
+.cta-sub {
+  font-size: 15px;
+  color: rgba(201,185,154,.4);
+  line-height: 1.75;
+  margin-bottom: 56px;
+}
+
+.cta-divider {
+  width: 40px;
+  height: 1px;
+  background: rgba(201,185,154,.2);
+  margin: 0 auto 40px;
+}
+
+.cta-contact {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 22px;
+  font-weight: 400;
+  color: var(--beige);
+  opacity: .7;
+}
+
+/* SEPARATOR */
+.sep {
+  height: 1px;
+  background: var(--gris-light);
+  max-width: 860px;
+  margin: 0 auto;
+}
+
+/* ANIMATIONS */
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(24px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.cover-main { animation: fadeUp .8s ease both; }
+.cover-bottom { animation: fadeUp .8s .2s ease both; }
+
+@media (max-width: 700px) {
+  .cover { padding: 32px; }
+  .section { padding: 72px 24px; }
+  .diagnostic-inner, .offres-inner, .timeline-inner { padding: 0 24px; }
+  .diag-grid { grid-template-columns: 1fr; }
+  .what-row { grid-template-columns: 1fr; }
+  .what-sep { display: none; }
+  .offre-top, .offre-body { padding: 32px 28px; }
+  .cta-inner { padding: 0 24px; }
+}
+</style>
+</head>
+<body>
+
+<!-- COVER -->
+<section class="cover">
+  <div class="cover-top">
+    <div class="cover-brand">Sales Performances Blueprint™</div>
+    <div class="cover-date">Mars 2026 — Confidentiel</div>
+  </div>
+  <div class="cover-main">
+    <p class="cover-eyebrow">Proposition stratégique</p>
+    <h1 class="cover-title">
+      Transformer ta machine<br>de vente en <em>système<br>qui scale.</em>
+    </h1>
+    <div class="cover-divider"></div>
+    <p class="cover-sub">
+      Ce document présente un diagnostic complet de ton tunnel commercial et deux propositions d'accompagnement adaptées à où tu en es aujourd'hui — et à où tu veux aller.
+    </p>
+  </div>
+  <div class="cover-bottom">
+    <div>
+      <div class="cover-for">Préparé pour</div>
+      <div class="cover-name">Kevin Juillet</div>
+    </div>
+    <div class="cover-confidential">Document confidentiel<br>Ne pas diffuser</div>
+  </div>
+</section>
+
+<!-- DIAGNOSTIC -->
+<div class="diagnostic-bg">
+  <div class="diagnostic-inner">
+    <p class="diagnostic-eyebrow">Ce que j'ai vu dans ton business</p>
+    <h2 class="diagnostic-title">Tu as déjà la machine.<br><em>Elle perd de l'argent à chaque étage.</em></h2>
+
+    <div class="diag-grid">
+      <div class="diag-card rouge">
+        <div class="diag-num">40–60%</div>
+        <div class="diag-label">Taux de no-show</div>
+        <div class="diag-desc">Sur 20 rendez-vous semaine, la moitié n'honore pas le call. C'est ta fuite principale. Chaque no-show est un deal mort — pas un deal reporté.</div>
+      </div>
+      <div class="diag-card rouge">
+        <div class="diag-num">3–4 RDV</div>
+        <div class="diag-label">Avant closing</div>
+        <div class="diag-desc">Setter, audit, projection, présentation pack. Chaque rendez-vous supplémentaire est une occasion supplémentaire de perdre le prospect. Et du temps que tu ne récupères pas.</div>
+      </div>
+      <div class="diag-card or">
+        <div class="diag-num">0</div>
+        <div class="diag-label">Nurturing entre les calls</div>
+        <div class="diag-desc">Entre le R1 setter et ton appel, les prospects reçoivent rien. Ils arrivent froids, pas éduqués, pas engagés. Tu reconstruis la confiance à chaque fois.</div>
+      </div>
+      <div class="diag-card or">
+        <div class="diag-num">Aucun</div>
+        <div class="diag-label">Système de recrutement prêt</div>
+        <div class="diag-desc">Quand tu vas avoir besoin d'un deuxième closer, tu n'auras pas de process documenté, pas de profil ICP défini, pas d'onboarding structuré. Tu reconstruiras tout dans l'urgence.</div>
+      </div>
+    </div>
+
+    <div style="background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.06);padding:40px;">
+      <p style="font-family:'Cormorant Garamond',serif;font-size:24px;font-weight:300;color:var(--blanc);line-height:1.5;margin-bottom:16px;">
+        "Rien qu'aujourd'hui, si je règle juste mon problème de no-show, déjà, mon chiffre d'affaires, il fait x3."
+      </p>
+      <p style="font-size:12px;letter-spacing:.2em;text-transform:uppercase;color:rgba(201,185,154,.3);">Kevin Juillet — lors de notre échange</p>
+    </div>
+  </div>
+</div>
+
+<!-- CE QU'ON FAIT -->
+<div class="section">
+  <p class="section-eyebrow">La méthode</p>
+  <h2 class="section-title">Done For You.<br><em>Done With You.</em></h2>
+  <p class="section-body" style="margin-bottom:64px;">
+    Pas une formation. Pas des conseils génériques. Je construis le système, je forme Jonathan, j'anticipe le recrutement — et tu implémentes ce que je livre.
+  </p>
+
+  <div class="what-row">
+    <div class="what-col">
+      <span class="what-tag dfy">Done For You</span>
+      <div class="what-title">Je construis. Tu implémentes.</div>
+      <div class="what-items">
+        <div class="what-item">Séquences de rappel et relance pré-call complètes — no-show sous 20% en 10 jours</div>
+        <div class="what-item">Nurturing entre R1 setter et ton appel — prospects éduqués, engagés, prêts</div>
+        <div class="what-item">Script closer retravaillé pour mieux qualifier et mieux engager sur les 49€</div>
+        <div class="what-item">Process d'onboarding documenté pour Jonathan</div>
+        <div class="what-item">Recrutement du prochain closer calé sur ton ICP + process d'onboarding complet</div>
+        <div class="what-item">Tableau de bord KPIs hebdo, mensuel, journalier — tu pilotes sans y passer du temps</div>
+        <div class="what-item">Système de rémunération et paliers de performance pour ton équipe commerciale</div>
+        <div class="what-item">Optimisation constante du process au fur et à mesure des résultats</div>
+      </div>
+    </div>
+    <div class="what-sep"></div>
+    <div class="what-col">
+      <span class="what-tag dwy">Done With You</span>
+      <div class="what-title">Je suis là quand ça compte.</div>
+      <div class="what-items">
+        <div class="what-item">Formation de Jonathan au nouveau process — je le prends en call direct, tu n'as pas à être là</div>
+        <div class="what-item">Analyse d'appels 1 fois par semaine — on identifie les fuites, on ajuste en temps réel</div>
+        <div class="what-item">Analyse des KPIs en début, semaine, mois — décisions basées sur les chiffres, pas les intuitions</div>
+        <div class="what-item">Disponible 7j/7 — si tu as un gros problème dans ta sales team à 7h du matin, je réponds</div>
+        <div class="what-item">1 call stratégique par semaine minimum — ou plus au besoin</div>
+        <div class="what-item">Quand le recrutement arrive, je t'accompagne sur les entretiens, le brief et l'onboarding</div>
+        <div class="what-item">Mise en place des objectifs et stratégie de management pour quand tu auras 2, 3, 4 closers</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- OFFRES -->
+<div class="offres-bg">
+  <div class="offres-inner">
+    <p style="font-size:10px;font-weight:500;letter-spacing:.3em;text-transform:uppercase;color:var(--beige);margin-bottom:20px;opacity:.7;">Deux propositions</p>
+    <h2 style="font-family:'Cormorant Garamond',serif;font-size:clamp(32px,5vw,52px);font-weight:300;line-height:1.1;color:var(--noir);margin-bottom:64px;">Selon comment<br><em style="font-style:italic;color:var(--gris);">tu veux travailler.</em></h2>
+
+    <!-- OFFRE 1 -->
+    <div class="offre-card featured" style="margin-bottom:16px;">
+      <div class="offre-top">
+        <span class="offre-badge">Recommandée — Partenariat long terme</span>
+        <h3 class="offre-name">Mensuel<br><em>+ Performance</em></h3>
+        <div style="display:flex;align-items:flex-end;gap:16px;margin-top:24px;flex-wrap:wrap;">
+          <div>
+            <div class="offre-price">4 000€</div>
+            <div class="offre-price-detail">par mois · sans engagement</div>
+          </div>
+          <div style="padding-bottom:8px;">
+            <div style="font-size:13px;color:rgba(201,185,154,.5);margin-bottom:4px;">+ performance</div>
+            <div style="font-family:'Cormorant Garamond',serif;font-size:22px;font-weight:300;color:var(--beige);">5% du delta CA généré</div>
+          </div>
+        </div>
+      </div>
+      <div class="offre-body">
+        <div class="offre-section-title">Ce que tu as chaque mois</div>
+        <div class="offre-items">
+          <div class="offre-item">Disponibilité 7j/7 — je suis ton HOS externalisé</div>
+          <div class="offre-item">1 call stratégique par semaine minimum, plus au besoin</div>
+          <div class="offre-item">Écoute et analyse d'appels 1 fois par semaine</div>
+          <div class="offre-item">Analyse des KPIs journaliers, hebdomadaires, mensuels</div>
+          <div class="offre-item">Optimisation constante du process selon les résultats</div>
+          <div class="offre-item">Formation et management de Jonathan inclus</div>
+          <div class="offre-item">Recrutement du prochain closer + process d'onboarding — fiche de poste, grille d'évaluation, intégration</div>
+          <div class="offre-item">Mise en place de la stratégie de management et du système de rémunération pour l'équipe</div>
+          <div class="offre-item">Done For You complet sur tous les process, scripts et séquences</div>
+        </div>
+        <div class="offre-garantie">
+          <div class="offre-garantie-label">Garantie résultat</div>
+          <div class="offre-garantie-text">Si à la fin du mois 1 tu n'as pas récupéré les 4 000€ en delta CA, je continue gratuitement jusqu'au résultat. Sans discussion.</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- OFFRE 2 -->
+    <div class="offre-card">
+      <div class="offre-top" style="border-bottom-color:var(--gris-light);">
+        <span class="offre-badge" style="background:rgba(10,10,10,.06);color:var(--noir);">Engagement total · 4 mois</span>
+        <h3 class="offre-name">Upfront<br><em>4 mois · Tout inclus</em></h3>
+        <div style="margin-top:24px;">
+          <div class="offre-price" style="color:var(--noir);">15 000€</div>
+          <div class="offre-price-detail" style="color:var(--gris);">paiement unique · 4 mois d'accompagnement complet</div>
+        </div>
+      </div>
+      <div class="offre-body">
+        <div class="offre-section-title" style="color:var(--or);">Tout ce que contient la proposition 1, plus</div>
+        <div class="offre-items">
+          <div class="offre-item" style="color:#3A3A3A;">4 mois d'accompagnement intensif — tu payes une fois, on travaille en profondeur</div>
+          <div class="offre-item" style="color:#3A3A3A;">Audit complet mois 1 — on repart de zéro sur le diagnostic et on construit tout</div>
+          <div class="offre-item" style="color:#3A3A3A;">Analyse d'appels hebdomadaire sans interruption sur 4 mois</div>
+          <div class="offre-item" style="color:#3A3A3A;">Recrutement du prochain closer livré clé en main — tu sais qui recruter, où, comment tester</div>
+          <div class="offre-item" style="color:#3A3A3A;">Process d'onboarding du prochain closer documenté — opérationnel en moins de 2 semaines</div>
+          <div class="offre-item" style="color:#3A3A3A;">Stratégie de management et système de rémunération pour une équipe de 2 à 5 closers</div>
+          <div class="offre-item" style="color:#3A3A3A;">Disponibilité 7j/7 pendant 4 mois — chaque problème est réglé dans la journée</div>
+        </div>
+        <div class="offre-garantie" style="background:rgba(184,150,62,.06);border-color:rgba(184,150,62,.15);">
+          <div class="offre-garantie-label" style="color:var(--or);">Garantie résultat</div>
+          <div class="offre-garantie-text">Si à 30 jours le no-show n'a pas baissé d'au moins 30%, je te rembourse la différence. Les chiffres parlent — c'est eux qui décident.</div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<!-- TIMELINE -->
+<div class="timeline">
+  <div class="timeline-inner">
+    <p class="section-eyebrow">Ce qui se passe concrètement</p>
+    <h2 class="section-title">Les 4 premières<br><em>semaines.</em></h2>
+
+    <div class="tl-items">
+      <div class="tl-item active">
+        <div class="tl-dot">1</div>
+        <div class="tl-content">
+          <div class="tl-when">Semaine 1 — Audit complet</div>
+          <div class="tl-title">On regarde les vrais chiffres</div>
+          <div class="tl-desc">Diagnostic complet du tunnel, analyse des KPIs actuels, identification des fuites prioritaires. Tu me donnes accès à tout — calls, chiffres, process. Je construis la feuille de route.</div>
+        </div>
+      </div>
+      <div class="tl-item active">
+        <div class="tl-dot">2</div>
+        <div class="tl-content">
+          <div class="tl-when">Semaine 2 — Livraison</div>
+          <div class="tl-title">Séquences, scripts, process</div>
+          <div class="tl-desc">Je livre toutes les séquences pré-call, le script closer retravaillé, le nurturing entre les appels. Jonathan est briefé. Les no-shows commencent à baisser.</div>
+        </div>
+      </div>
+      <div class="tl-item">
+        <div class="tl-dot">3</div>
+        <div class="tl-content">
+          <div class="tl-when">Semaine 3 — Ajustements</div>
+          <div class="tl-title">On teste, on mesure, on ajuste</div>
+          <div class="tl-desc">Première analyse d'appels. On regarde les chiffres de la semaine. On ajuste ce qui doit l'être. Le process commence à tourner sans toi.</div>
+        </div>
+      </div>
+      <div class="tl-item">
+        <div class="tl-dot">4</div>
+        <div class="tl-content">
+          <div class="tl-when">Semaine 4 — Bilan</div>
+          <div class="tl-title">Delta CA mesuré, suite décidée</div>
+          <div class="tl-desc">On compare les chiffres avant et après. Le delta parle de lui-même. On planifie la suite — recrutement, scaling, optimisation de l'offre.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- CTA FINAL -->
+<div class="cta-final">
+  <div class="cta-inner">
+    <p class="cta-eyebrow">La prochaine étape</p>
+    <h2 class="cta-title">On se call<br><em>le 23 mars.</em></h2>
+    <div class="cta-divider"></div>
+    <p class="cta-sub">
+      Tu as déjà la machine. Tu as déjà le closer. Tu as déjà les leads. Ce qu'il manque c'est le système qui fait que tout ça convertit sans que tu sois partout à la fois. C'est ce qu'on construit ensemble.
+    </p>
+    <div class="cta-contact">Anouck Tournebize<br><span style="font-size:16px;color:rgba(201,185,154,.35);font-family:'DM Sans',sans-serif;font-weight:300;letter-spacing:.1em;">Sales Performances Blueprint™</span></div>
+  </div>
+</div>
+
+</body>
+</html>
+cp propal-kevin.html /workspaces/Kevin-juillet-propal/
+```
+
+Ensuite va directement sur **github.com/anoucktbze/auditsaleserf/tree/main/docs** et uploade le fichier depuis ton Mac — c'est plus simple.
+
+**Add file → Upload files → glisse `propal-kevin.html` → Commit**
+
+Le lien sera alors actif :
+```
+https://anoucktbze.github.io/auditsaleserf/propal-kevin.html
